@@ -49,10 +49,9 @@ const MyProjects = () => {
   return (
     <section
       id="Projects"
-      className="bg-[#0b0b0b] text-white py-24 px-6"
-    >
-      <div className="max-w-7xl mx-auto">
+      className="bg-[#0b0b0b] text-white py-24 px-6">
 
+       <div className="max-w-7xl mx-auto" >
         
         <div className="text-center mb-16">
           <p className="text-gray-400 tracking-widest uppercase text-sm">

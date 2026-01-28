@@ -3,7 +3,7 @@ import myphoto from "../assets/images/mypic.jpg";
 function About() {
   return (
     <section id="about" className="text-white px-6 py-12">
-      
+
       <div className="text-center mb-16 mr-20">
         <p className="text-gray-400 text-sm tracking-widest uppercase">
           My Bio
@@ -13,11 +13,11 @@ function About() {
         </h2>
       </div>
 
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-30">
-        
-    <div className="relative flex justify-center">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-30">
 
-         <div className="absolute  rounded-full border border-teal-400/30  animate-spin-slow"></div>
+        <div className="relative flex justify-center">
+
+          <div className="absolute  rounded-full border border-teal-400/30  animate-spin-slow"></div>
 
           <div className="relative w-100 h-100 rounded-full border-2 border-teal-400 p-6">
             <img
@@ -27,7 +27,7 @@ function About() {
             />
           </div>
 
-          {/* Skill badges */}
+
           <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black font-bold px-3 py-1 rounded-full">
             JS
           </span>
@@ -45,7 +45,7 @@ function About() {
           </span>
         </div>
 
-        {/* Text Section */}
+
         <div className="max-w-xl">
           <div className="space-y-5 text-gray-300 text-lg leading-relaxed">
             <p>
@@ -62,9 +62,15 @@ function About() {
             </p>
           </div>
 
-          <button className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-teal-400 text-black rounded-md hover:bg-red-300 transition">
+          <a
+            href="/MyResume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-teal-400 text-black rounded-md hover:bg-red-300 transition">
             View Resume 📄
-          </button>
+
+          </a>
+
         </div>
 
       </div>
