@@ -9,7 +9,7 @@ function About() {
           My Bio
         </p>
         <h2 className="text-4xl font-bold mt-2">
-          About <span className="text-teal-400">Me</span>.
+          Abouts <span className="text-teal-400">Me</span>.
         </h2>
       </div>
 
