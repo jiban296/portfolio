@@ -1,32 +1,82 @@
-import profile from "../assets/images/mypic.jpg";
 
-function Header(){
-    return (
-    
-   <header className="w-full shadow-2xl bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
-        {/* Logo */}
-        <div className="flex items-center md:space-x-4">
+import { useState } from "react";
+import profile from "../assets/images/mypic.jpg";
+function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="w-full fixed top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+        {/* Logo / Profile */}
+        <div className="flex items-center gap-3">
           <img
             src={profile}
-            alt="logo"
-            className="h-24 w-24 object-cover rounded-full  md:rounded-full"
+            alt="profile"
+            className="h-12 w-12 rounded-full object-cover border-2 border-teal-400"
           />
         </div>
 
-       <nav>
-        <ul className="flex md:flex space-x-8 md:space-x-6 text-gray-700 dark:text-gray-200 font-semibold text-sm md:text-sm">
-            <li><a href="#home" className=" hover:text-blue-500  hover:bg-blue-500 hover:text-white py-2 px-2  hover:border-2 hover:rounded-md transition">Home</a></li>
-            <li><a href="#about" className="hover:text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-2  hover:border-2 hover:rounded-md transition">About</a></li>
-            <li><a href="#Projects" className="hover:text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-2  hover:border-2 hover:rounded-md transition">MyProjects</a></li>
-            <li><a href="#skills" className="hover:text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-2  hover:border-2 hover:rounded-md transition">Skills</a></li>
-            <li><a href="#contact" className="hover:text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-2  hover:border-2 hover:rounded-md transition">Contact</a></li>
-        </ul>
-       </nav>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex">
+          <ul className="flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
+            {["Home", "About", "MyProjects", "Skills", "Contact"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="
+                    px-3 py-2 rounded-md
+                    transition-all duration-300
+                    hover:bg-teal-400 hover:text-black
+                  "
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-    </div>
+        {/* Mobile Menu Button */}
+              <button
+                    onClick={() => setOpen(!open)}
+                    className="md:hidden text-gray-800 dark:text-gray-200 text-2xl"
+                  >
+                    {open ? "✕" : "☰"}
+            </button>
+
+      </div>
+
+      {/* Mobile Dropdown */}
+      <div
+        className={`
+          md:hidden
+          transition-all duration-300 ease-in-out
+          ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+        `}
+      >
+        <nav className="bg-gradient-to-br from-teal-500 to-blue-600 px-6 py-4">
+          <ul className="flex flex-col gap-4 text-white font-medium">
+            {["Home", "About", "MyProjects", "Skills", "Contact"].map((item) => (
+              <li key={item}>
+                <a
+                  onClick={() => setOpen(false)}
+                  href={`#${item.toLowerCase()}`}
+                  className="
+                    block px-4 py-2 rounded-lg
+                    transition-all duration-300
+                    hover:bg-white/20 hover:translate-x-1
+                  "
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
-    );
-};
+  );
+}
 
-export default Header;
+export default Navbar;
