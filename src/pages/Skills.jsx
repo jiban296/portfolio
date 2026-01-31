@@ -22,77 +22,39 @@ return (
 
         </div>
   
-      <div className="grid grid-cols-6 py-2 md:grid-cols-6 md:gap-6">
-            <div className="col-span-2 w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide 
-                hover:bg-teal-400 
-                hover:text-black transition ">
-                 HTML5
-            </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 py-6">
+  {[
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Tailwind",
+    "UI Design",
+  ].map((skill) => (
+    <div
+      key={skill}
+      className="
+        flex items-center justify-center
+        h-24 w-full
+        rounded-xl
+        border border-teal-400/60
+        text-sm font-medium tracking-wide
+        text-teal-300
+        backdrop-blur-sm
+        transition-all duration-300
+        hover:bg-teal-400
+        hover:text-black
+        hover:scale-105
+        hover:shadow-lg hover:shadow-teal-400/30
+        active:scale-95
+      "
+    >
+      {skill}
+    </div>
+  ))}
+</div>
 
-            <div className="col-span-2 w-36 h-18 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-md
-                text-sm tracking-wide 
-                hover:bg-teal-400 
-                hover:text-black transition">
-                    JAVASCRIPT
-            </div>
-
-            <div className=" col-span-2 w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide 
-                hover:bg-teal-400 
-                hover:text-black transition">
-                    CSS3
-            </div>
-
-            <div className=" col-span-3 justify-self-center w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide 
-                hover:bg-teal-400 
-                hover:text-black transition">
-                    REACT
-            </div>
-
-            <div className=" col-span-3 justify-self-center w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide 
-                hover:bg-teal-400 
-                hover:text-black transition">
-                    TAILWIND
-            </div>
-
-            <div className="col-span-3 w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide
-                 hover:bg-teal-400 
-                 hover:text-black transition">
-                    UI DESIGN
-            </div>
-
-            <div className=" col-span-3 w-24 h-24 
-                flex items-center justify-center
-                border-2 border-teal-400 
-                rounded-full
-                text-sm tracking-wide 
-                hover:bg-teal-400
-                hover:text-black transition">
-                    TYPESCRIPT 
-            </div>
-      </div> 
   </div> 
 
 </section>
